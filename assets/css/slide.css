@@ -24,12 +24,13 @@
   z-index: 1;
 }
 
-/* スマホ表示時は背景画像を拡大して両端をカット */
+/* スマホ表示時は背景画像を拡大して左右端のみカット */
 @media screen and (max-width: 600px) {
   #mainimg .bg-image {
-    width: 125%;
-    max-width: 125%;
-    object-fit: cover;
+    width: 166%;
+    max-width: 166%;
+    height: auto;
+    object-fit: none;
     object-position: center;
   }
 }

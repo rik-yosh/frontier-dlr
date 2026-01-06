@@ -991,9 +991,9 @@ section h2 .hosoku {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 95%;
   height: auto;
-  max-width: 80%;
+  max-width: 95%;
   object-fit: contain;
   z-index: 2;
   border-radius: 0;

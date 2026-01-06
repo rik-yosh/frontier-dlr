@@ -1,0 +1,1032 @@
+@charset "utf-8";
+
+/* Font Awesome の読み込み */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css");
+
+/* Google Fonts の読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+/* テンプレート専用cssファイルの読み込み */
+@import url("slide.css");
+@import url("inview.css");
+
+/* CSSカスタムプロパティ（サイト全体を一括管理） */
+:root {
+  --text-color: #eee;
+  --primary-color: #02354e;
+  --primary-inverse-color: #eee;
+  --global-space: 5vw;
+}
+
+/* animation1のキーフレーム設定 */
+@keyframes animation1 {
+  0% { left: -200px; }
+  100% { left: 0px; }
+}
+
+/* opa1のキーフレーム設定 */
+@keyframes opa1 {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* fadeIn のキーフレーム設定 */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* 全体の設定 */
+body * { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  font-size: 13px;
+}
+
+@media screen and (min-width: 900px) {
+  html, body {
+    font-size: 16px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Meiryo, "メイリオ", "Osaka", "MS PGothic", "ＭＳ Ｐゴシック", sans-serif;
+  -webkit-text-size-adjust: none;
+  background: #000;
+  color: var(--text-color);
+  line-height: 2;
+}
+
+/* リセット */
+figure { margin: 0; }
+dd { margin: 0; }
+nav, ul, li, ol { margin: 0; padding: 0; }
+nav ul { list-style: none; }
+section li { margin-left: 1rem; }
+
+/* テーブル設定 */
+table { border-collapse: collapse; }
+
+/* 画像設定 */
+img { border: none; max-width: 100%; height: auto; vertical-align: middle; }
+
+/* video/iframe */
+video { max-width: 100%; }
+iframe { width: 100%; }
+
+/* その他 */
+input { font-size: 1rem; }
+section + section { margin-top: 3rem; }
+
+/* リンク設定 */
+a {
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+/* コンテナー */
+body:not(.home) #container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* コンテンツ */
+#contents {
+  flex: 1;
+  padding: var(--global-space);
+}
+
+@media screen and (max-width: 600px) {
+  #contents {
+    padding-top: 80px;
+  }
+}
+
+/* ヘッダー設定（固定表示） */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  padding: 8px var(--global-space);
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+header #logo {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+header #logo a {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header #logo a .logo-img {
+  height: 2rem;
+  width: auto;
+  vertical-align: middle;
+}
+
+/* ナビゲーション */
+#menubar nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+#menubar nav ul li {
+  position: relative;
+  margin: 0;
+}
+
+#menubar nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+  font-family: "Reddit Sans", "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+#menubar nav ul li a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* ドロップダウンメニュー */
+#menubar nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #111;
+  border: 1px solid #333;
+  flex-direction: column;
+  gap: 0;
+  z-index: 10;
+}
+
+#menubar nav ul li ul li {
+  width: 200px;
+}
+
+#menubar nav ul li ul li a {
+  padding: 10px 15px;
+}
+
+#menubar nav ul li:hover > ul {
+  display: flex;
+}
+
+/* ハンバーガーメニュー */
+#menubar_hdr {
+  display: none;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  z-index: 1001;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+}
+
+#menubar_hdr span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin: 6px auto;
+  transition: 0.3s;
+}
+
+#menubar_hdr.ham span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+#menubar_hdr.ham span:nth-child(2) {
+  opacity: 0;
+}
+
+#menubar_hdr.ham span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* コンテンツの上部マージン（固定ヘッダー用） */
+body.home #contents {
+  padding-top: var(--global-space);
+}
+
+body:not(.home) #contents {
+  padding-top: 80px;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    padding: 15px var(--global-space);
+  }
+
+  header #logo a {
+    font-size: 0.85rem;
+  }
+
+  #menubar_hdr {
+    display: block;
+  }
+
+  #menubar {
+    display: none;
+  }
+
+  #menubar.display-block {
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    padding: 20px;
+    z-index: 999;
+    animation: animation1 0.5s ease-in-out;
+  }
+
+  #menubar nav ul {
+    flex-direction: column;
+    gap: 0;
+    justify-content: flex-start;
+  }
+
+  #menubar nav ul li {
+    border-bottom: 1px solid #333;
+  }
+
+  #menubar nav ul li a {
+    display: block;
+  }
+
+  #menubar nav ul li ul {
+    position: static;
+    background-color: #111;
+    margin-top: 10px;
+  }
+
+  #menubar nav ul li ul li {
+    width: 100%;
+  }
+
+  body:not(.home) #contents {
+    padding-top: 120px;
+  }
+}
+
+/* フッターメニュー */
+#footermenu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 20px;
+  background-color: #111;
+}
+
+#footermenu li {
+  margin: 0;
+}
+
+#footermenu a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+#footermenu a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* フッター */
+footer {
+  background-color: #000;
+  color: var(--text-color);
+  text-align: center;
+  padding: 30px var(--global-space);
+  border-top: 1px solid #333;
+}
+
+footer small {
+  display: block;
+  font-size: 0.9rem;
+}
+
+footer .pr {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+/* ボタン設定 */
+.btn a,
+.btn-border-radius a {
+  display: block;
+  text-decoration: none;
+  font-size: 1rem;
+  text-align: center;
+  background: var(--primary-color) !important;
+  color: var(--primary-inverse-color) !important;
+  padding: 0.5rem !important;
+  margin-top: 1rem !important;
+}
+
+.btn a:hover,
+.btn-border-radius a:hover {
+  filter: brightness(1.2);
+}
+
+.btn-border-radius a {
+  display: inline-block;
+  padding: 0.5rem 2rem !important;
+  border-radius: 100px;
+  background: #f53e72 !important;
+}
+
+.btn-link {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  border-radius: 100px;
+  background: #f53e72 !important;
+  color: white !important;
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  filter: brightness(1.2);
+}
+
+/* bg1背景色 */
+.bg1 {
+  position: relative;
+  background: var(--primary-color);
+  color: var(--primary-inverse-color);
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+  margin-left: calc(-1 * var(--global-space));
+  margin-right: calc(-1 * var(--global-space));
+  padding-left: var(--global-space);
+  padding-right: var(--global-space);
+}
+
+.bg1 a {
+  color: inherit;
+}
+
+.bg1::before, .bg1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: calc(5vw + 1px);
+  background: var(--primary-color);
+}
+
+.bg1::before {
+  top: -5vw;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.bg1::after {
+  bottom: -5vw;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* Programセクション専用の背景色 */
+.bg-program {
+  position: relative;
+  background: #e4e9d5 !important;
+  color: #000 !important;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+  margin-left: calc(-1 * var(--global-space));
+  margin-right: calc(-1 * var(--global-space));
+  padding-left: var(--global-space);
+  padding-right: var(--global-space);
+}
+
+.bg-program h2,
+.bg-program h2 span,
+.bg-program a {
+  color: #000 !important;
+}
+
+.bg-program::before, .bg-program::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: calc(5vw + 1px);
+  background: #e4e9d5;
+}
+
+.bg-program::before {
+  top: -5vw;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.bg-program::after {
+  bottom: -5vw;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+/* list-grid1 */
+.list-grid1 {
+  display: grid;
+  color: #555;
+}
+
+.list-grid1 .list {
+  display: grid;
+}
+
+.list-grid1 .list * {
+  margin: 0;
+  padding: 0;
+}
+
+.list-grid1 .list p {
+  font-size: 0.85rem;
+}
+
+@media screen and (min-width: 500px) {
+  .list-grid1 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .list-grid1 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+.list-grid1 .list {
+  padding: 1rem;
+  background: #fff;
+  grid-template-rows: auto 1fr;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.list-grid1 .list figure img {
+  margin-bottom: 0.5rem;
+}
+
+/* テーブル */
+.ta1 caption {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.ta1 {
+  table-layout: fixed;
+  border-top: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 5rem;
+}
+
+.ta1 tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.ta1 th, .ta1 td {
+  padding: 1rem;
+  word-break: break-all;
+}
+
+.ta1 th {
+  width: 30%;
+  text-align: left;
+}
+
+@media screen and (min-width: 900px) {
+  .ta1 th {
+    width: 20%;
+  }
+}
+
+/* お知らせブロック */
+.new dd {
+  padding-bottom: 1rem;
+}
+
+.new dt span {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.8;
+  border-radius: 3px;
+  width: 8rem;
+  transform: scale(0.8);
+  background: #fff;
+  color: #777;
+  border: 1px solid #333;
+}
+
+.new .icon-bg1 {
+  background: #333;
+  color: #fff;
+}
+
+.new .icon-bg2 {
+  background: #ff0000;
+  color: #fff;
+}
+
+@media screen and (min-width: 700px) {
+  .new {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+}
+
+/* PAGE TOP ボタン */
+.pagetop-show { display: block; }
+
+.pagetop a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  z-index: 99;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  color: #fff;
+  font-size: 1.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  width: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+}
+
+/* その他ユーティリティ */
+.clearfix::after { content: ""; display: block; clear: both; }
+.color-check, .color-check a { color: #ff0000 !important; }
+.l { text-align: left !important; }
+.c { text-align: center !important; }
+.r { text-align: right !important; }
+.ws { width: 95%; display: block; }
+.wl { width: 95%; display: block; }
+.mb0 { margin-bottom: 0px !important; }
+.mb30 { margin-bottom: 30px !important; }
+.small { font-size: 0.75em; }
+.large { font-size: 2em; letter-spacing: 0.1em; }
+.pc { display: none; }
+.dn { display: none !important; }
+.block { display: block !important; }
+
+@media screen and (min-width: 900px) {
+  .ws { width: 48%; display: inline; }
+  .sh { display: none; }
+  .pc { display: block; }
+}
+
+/* Committee Grid */
+.committee-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 700px) {
+  .committee-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.committee-member {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.committee-member p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.committee-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Event Box */
+.event-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 5px;
+  margin: 2rem 0;
+}
+
+.event-content h3 {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.event-detail {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.event-detail strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* セクション見出しのスタイル */
+section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem 0;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+section h2 .fade-in-text {
+  display: block;
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+section h2 .hosoku {
+  display: block;
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+}
+
+/* ページ見出し（非ホームページ） */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: left;
+  margin: 2rem 0;
+  color: #fff;
+}
+
+.page-title-en {
+  display: block;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.page-title-ja {
+  display: block;
+  font-size: 0.8rem;
+  color: #999;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  margin-top: 0.5rem;
+}
+
+/* スピーカーグリッド */
+.speaker-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+@media screen and (min-width: 600px) {
+  .speaker-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .speaker-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.speaker-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.speaker-item h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.speaker-item p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.speaker-title {
+  font-style: italic;
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: 1rem !important;
+}
+
+/* イベント詳細ボックス */
+.event-details {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+@media screen and (min-width: 600px) {
+  .event-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.detail-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 5px;
+  border-left: 4px solid var(--primary-inverse-color);
+}
+
+.detail-item h3 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  color: var(--primary-inverse-color);
+}
+
+.detail-item p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+/* コンタクトボックス */
+.contact-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 5px;
+  margin: 2rem 0;
+  border-left: 4px solid #f53e72;
+}
+
+.contact-box h3 {
+  margin-top: 0;
+  color: var(--primary-inverse-color);
+}
+
+.contact-box p {
+  margin: 0.5rem 0;
+}
+
+/* 英語ラベルのスタイル */
+.en-label {
+  font-family: "Reddit Sans", sans-serif;
+  font-weight: 600;
+  color: #f53e72;
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* スマホ向け追加スタイル */
+@media screen and (max-width: 600px) {
+  /* ロゴテキストを小さく */
+  header #logo a {
+    font-size: 0.65rem;
+    gap: 0.3rem;
+  }
+  
+  header #logo a .logo-img {
+    height: 1.5rem;
+  }
+
+  /* ヘッダーの高さ調整 */
+  header {
+    padding: 10px 15px;
+  }
+
+  /* メインイメージのパディング調整 */
+  body.home #contents {
+    padding-top: 0;
+  }
+
+  /* セクション間のマージン調整 */
+  section + section {
+    margin-top: 2rem;
+  }
+
+  /* bg1の傾斜を小さく */
+  .bg1 {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+  }
+
+  .bg1::before {
+    top: -3vw;
+    height: calc(3vw + 1px);
+  }
+
+  .bg1::after {
+    bottom: -3vw;
+    height: calc(3vw + 1px);
+  }
+
+  /* タイトルのサイズ調整 */
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  /* コンテンツのパディング調整 */
+  #contents {
+    padding: 3vw;
+  }
+
+  /* イベント詳細を1カラムに */
+  .event-details {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* 委員会グリッドを1カラムに */
+  .committee-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* フッターメニューを縦並びに */
+  #footermenu {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  /* ボタンのパディング調整 */
+  .btn-border-radius a,
+  .btn-link {
+    padding: 0.4rem 1.5rem !important;
+    font-size: 0.9rem;
+  }
+
+  /* お知らせリストのフォントサイズ調整 */
+  .new dt {
+    font-size: 0.85rem;
+  }
+
+  .new dd {
+    font-size: 0.9rem;
+  }
+}
+
+/* 開催趣旨コンテンツのレイアウト */
+.overview-content {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 900px) {
+  .overview-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.overview-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.overview-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.overview-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* シンポジウム左右分割レイアウト */
+.symposium-container {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  align-items: stretch;
+}
+
+.symposium-image-left {
+  flex: 0 0 35%;
+  display: flex;
+  align-items: center;
+}
+
+.symposium-image-left img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.symposium-content-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.symposium-intro-text {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.8;
+}
+
+.event-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 5px;
+  border-left: 3px solid var(--text-color);
+}
+
+.info-item h3 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color);
+}
+
+.info-item p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .symposium-container {
+    flex-direction: column;
+  }
+  
+  .symposium-image-left {
+    flex: 0 0 auto;
+  }
+  
+  .event-info {
+    grid-template-columns: 1fr;
+  }
+}

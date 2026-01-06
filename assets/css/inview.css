@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+/* up, down, transform1, transform2 の共通設定（待機中） */
+.up, .down, .transform1, .transform2 {
+  position: relative;
+  opacity: 0;
+}
+
+/* up, down, transform1, transform2 の共通設定（要素が見えたら実行） */
+.upstyle, .downstyle, .transform1style, .transform2style {
+  opacity: 1;
+  transition: 1s 0.5s;
+}
+
+/* up スタイル（下から上にフェードイン） */
+.up {
+  bottom: -20px;
+}
+
+.upstyle {
+  bottom: 0px;
+}
+
+/* down スタイル（上から下にフェードイン） */
+.down {
+  top: -20px;
+}
+
+.downstyle {
+  top: 0px;
+}
+
+/* transform1 スタイル（回転） */
+.transform1 {
+  transform: scaleX(0);
+}
+
+.transform1style {
+  transform: scaleX(1);
+}
+
+/* transform2 スタイル（倒れた状態から起き上がる） */
+.transform2 {
+  transform: perspective(400px) translateZ(-70px) rotateX(50deg);
+}
+
+.transform2style {
+  transform: perspective(400px) translateZ(0px) rotateX(0deg);
+}
+
+/* blur スタイル（ぼかしで出現） */
+.blur {
+  opacity: 0;
+  filter: blur(30px);
+  transform: scale(1.1);
+}
+
+.blurstyle {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+  transition: 1s 0.5s;
+}
+
+/* transform3 スタイル（小さなサイズから原寸大に） */
+@keyframes transform3 {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.99);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.transform3 {
+  transform: scale(0);
+}
+
+.transform3style {
+  animation: transform3 0.8s ease-out 0.5s both;
+}

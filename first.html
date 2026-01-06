@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1st Symposium - データサイエンスシンポジウム</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/slide.css">
+  <link rel="stylesheet" href="assets/css/inview.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    /* スムーススクロール */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* セクションにスペースを追加 */
+    section[id] {
+      scroll-margin-top: 100px;
+    }
+  </style>
+</head>
+<body class="home">
+  <div id="container">
+    <header>
+      <h1 id="logo"><a href="index.html"><img src="assets/images/logo_white.svg" alt="Logo" class="logo-img">FRONTIERS OF DATA SCIENCE AND LIFE SCIENCE RESEARCH</a></h1>
+      
+      <div id="menubar">
+        <nav>
+          <ul>
+            <li><a href="#venue">VENUE</a></li>
+            <li><a href="#program">PROGRAM</a></li>
+            <li><a href="#banquet">BANQUET</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="sh">小さな端末でのみ表示させたいコンテンツがあればここに入れます。</div>
+      </div>
+    </header>
+
+    <!-- メインイメージ -->
+    <aside id="mainimg">
+      <img src="assets/images/1stDSS_TitleImage.svg" alt="第1回シンポジウム">
+    </aside>
+
+    <div id="contents">
+      <main>
+        <!-- 開催概要 -->
+        <section>
+          <h2><span class="fade-in-text">1st Symposium</span><span class="hosoku">第1回シンポジウム</span></h2>
+          <p>2024年10月21日(月) - 10月22日(火)に東京大学山上会館にて、第1回データサイエンスと生命医科学研究のフロンティアシンポジウムを開催いたしました。数理科学、情報科学、生命医科学の各分野から第一線の研究者をお招きし、最先端の研究成果をご発表いただきました。</p>
+        </section>
+
+        <!-- VENUE セクション -->
+        <section id="venue">
+          <h2><span class="fade-in-text">Venue</span><span class="hosoku">会場</span></h2>
+          <h3>東京大学 山上会館</h3>
+          <p>〒113-0033 東京都文京区本郷7-3-1</p>
+          <div style="max-width: 100%; overflow: hidden; margin-top: 2rem;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.6484449586986!2d139.76082307631748!3d35.71242812888788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c2ffa206ea3%3A0x30e407498313a1e6!2z5p2x5Lqs5aSn5a2m5bGx5LiK5Lya6aSo!5e0!3m2!1sja!2sjp!4v1704528000000!5m2!1sja!2sjp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </section>
+
+        <!-- PROGRAM セクション -->
+        <section id="program" class="bg1">
+          <h2><span class="fade-in-text">Program</span><span class="hosoku">プログラム</span></h2>
+          
+          <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">10月21日（月）</h3>
+          <table class="ta1">
+            <caption>October 21 (Monday)</caption>
+            <thead>
+              <tr>
+                <th style="width: 15%;">時間</th>
+                <th style="width: 35%;">講演者</th>
+                <th style="width: 50%;">講演タイトル</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color: #222;">
+                <td colspan="3" style="padding: 0.8rem; font-weight: bold; text-align: center; font-size: 0.95rem;">第一セッション：最適輸送理論を駆使したデータサイエンス（座長：平岡裕章/京都大学）</td>
+              </tr>
+              <tr>
+                <td>10:05 - 10:35</td>
+                <td>谷地村敏明<br>東北大学数理科学共創社会センター</td>
+                <td>最適輸送理論と単一細胞データ解析</td>
+              </tr>
+              <tr>
+                <td>10:35 - 11:05</td>
+                <td>徳田有矢<br>京都大学 ヒト生物学高等研究拠点（ASHBi）</td>
+                <td>最適輸送理論を用いた遺伝子発現データ解析による種差の解明</td>
+              </tr>
+              <tr>
+                <td>11:10 - 11:40</td>
+                <td>本田直樹<br>広島大学統合生命科学研究科</td>
+                <td>最適輸送に基づく臓器連関の推定</td>
+              </tr>
+              <tr style="background-color: #222;">
+                <td colspan="3" style="padding: 0.8rem; font-weight: bold; text-align: center; font-size: 0.95rem;">第二セッション：トポロジカルデータ解析を駆使したデータサイエンス（座長：坂上貴之/京都大学）</td>
+              </tr>
+              <tr>
+                <td>13:00 - 13:25</td>
+                <td>Kilian Meehan<br>京都大学 ヒト生物学高等研究拠点（ASHBi）</td>
+                <td>Topologically Learned Embeddings and Chromosome Structural Analysis</td>
+              </tr>
+              <tr>
+                <td>13:25 - 13:50</td>
+                <td>大林一平<br>岡山大学 AI・数理データサイエンスセンター</td>
+                <td>パーシステントホモロジーによるデータ解析：理論・ソフトウェア・材料科学データへの応用</td>
+              </tr>
+              <tr>
+                <td>14:00 - 14:25</td>
+                <td>宇田智紀<br>富山大学学術研究部理学系</td>
+                <td>流線トポロジー解析の気象学・海洋学への応用</td>
+              </tr>
+              <tr>
+                <td>14:25 - 14:50</td>
+                <td>鍛冶静雄<br>九州大学マス・フォア・インダストリ研究所</td>
+                <td>パーシステントホモロジーを用いた医用画像解析</td>
+              </tr>
+              <tr style="background-color: #222;">
+                <td colspan="3" style="padding: 0.8rem; font-weight: bold; text-align: center; font-size: 0.95rem;">第三セッション：数理モデルを駆使したデータサイエンス（座長：岩見真吾/名古屋大学）</td>
+              </tr>
+              <tr>
+                <td>15:15 - 15:40</td>
+                <td>吉村雷輝<br>名古屋大学大学院理学研究科</td>
+                <td>急性肝障害の病態ダイナミクス解析と予後予測</td>
+              </tr>
+              <tr>
+                <td>15:40 - 16:05</td>
+                <td>林周斗<br>東京医科歯科大学難治疾患研究所</td>
+                <td>生成AIとロボットの協働による次世代タンパク質設計</td>
+              </tr>
+              <tr>
+                <td>16:05 - 16:30</td>
+                <td>杉本光<br>東京大学医学系研究科</td>
+                <td>血糖を規定する法則の探究</td>
+              </tr>
+              <tr style="background-color: #222;">
+                <td colspan="3" style="padding: 0.8rem; font-weight: bold; text-align: center; font-size: 0.95rem;">第四セッション：データサイエンスを駆使した臨床研究①（座長：藤生克仁/東京大学）</td>
+              </tr>
+              <tr>
+                <td>16:45 - 17:10</td>
+                <td>木村雄弘<br>慶應義塾大学医学部</td>
+                <td>Apple Watchを使った不整脈検出研究</td>
+              </tr>
+              <tr>
+                <td>17:10 - 17:35</td>
+                <td>坂本和生<br>九州大学病院</td>
+                <td>不整脈侵襲治療のAI開発</td>
+              </tr>
+              <tr>
+                <td>17:35 - 18:00</td>
+                <td>鍵山暢之<br>順天堂大学大学院医学研究科</td>
+                <td>心臓超音波検査のAIの研究と臨床使用の効果</td>
+              </tr>
+              <tr>
+                <td>18:00 - 18:25</td>
+                <td>野村章洋<br>金沢大学融合科学系</td>
+                <td>デジタルバイオマーカーを用いた臨床研究</td>
+              </tr>
+              <tr style="background-color: #1a1a1a;">
+                <td>18:30 - 21:00</td>
+                <td colspan="3" style="text-align: center; font-weight: bold;">意見交換会（東京大学山上会館）</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3 style="margin-top: 2rem; margin-bottom: 1rem; font-size: 1.3rem;">10月22日（火）</h3>
+          <table class="ta1">
+            <caption>October 22 (Tuesday)</caption>
+            <thead>
+              <tr>
+                <th style="width: 15%;">時間</th>
+                <th style="width: 35%;">講演者</th>
+                <th style="width: 50%;">講演タイトル</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color: #222;">
+                <td colspan="3" style="padding: 0.8rem; font-weight: bold; text-align: center; font-size: 0.95rem;">第五セッション：機械学習を駆使したデータサイエンス（座長：藤生克仁/東京大学）</td>
+              </tr>
+              <tr>
+                <td>09:10 - 09:35</td>
+                <td>立松大機<br>名古屋大学大学院理学研究科</td>
+                <td>エネルギー地形解析（ELA）を組み込んだデータ解析</td>
+              </tr>
+              <tr>
+                <td>09:35 - 10:00</td>
+                <td>間島混一郎<br>名古屋大学医学部</td>
+                <td>一細胞バーコードデータに基づく遺伝子発現変遷の推定</td>
+              </tr>
+              <tr>
+                <td>10:00 - 10:25</td>
+                <td>石川哲朗<br>慶應義塾大学医学部，理化学研究所，東京大学大学院総合文化研究科</td>
+                <td>可視化を通じた健康・疾患状態の多様性の理解</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- BANQUET セクション -->
+        <section id="banquet">
+          <h2><span class="fade-in-text">Banquet</span><span class="hosoku">意見交換会</span></h2>
+          <p>1日目の講演終了後、意見交換会を開催いたしました。</p>
+          
+          <div class="event-info">
+            <div class="info-item">
+              <h3>日時</h3>
+              <p>2024年10月21日(月) 18:30 - 21:00</p>
+            </div>
+            
+            <div class="info-item">
+              <h3>会場</h3>
+              <p>東京大学 山上会館</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT セクション -->
+        <section id="contact" class="bg1">
+          <h2><span class="fade-in-text">Contact</span><span class="hosoku">お問い合わせ</span></h2>
+          
+          <p>第1回シンポジウムに関するご質問・ご相談は、以下までお問い合わせください。</p>
+          
+          <div class="contact-box">
+            <h3>主要連絡先</h3>
+            <p><strong>吉村 雷輝</strong></p>
+            <p><strong>Email:</strong> yoshimura.raiki21@gmail.com</p>
+          </div>
+          
+          <p class="c" style="margin-top: 2rem;">
+            <a href="contact.html" class="btn-link">お問い合わせページへ</a>
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <ul id="footermenu">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="committee.html">COMMITTEE</a></li>
+      <li><a href="Second.html">NEXT</a></li>
+      <li><a href="past.html">PAST</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+
+    <footer>
+      <small>Copyright&copy; <a href="index.html">FRONTIERS OF DATA SCIENCE AND LIFE SCIENCE RESEARCH</a> All Rights Reserved.</small>
+      <span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+    </footer>
+
+    <div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
+  </div>
+
+  <div id="menubar_hdr">
+    <span></span><span></span><span></span>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+  <script src="js/jquery.inview_set.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -24,11 +24,12 @@
   z-index: 1;
 }
 
-/* スマホ表示時は画像中心を軸にスマホ比率9:20でくり抜き */
+/* スマホ表示時は画面の高さ方向を最大で表示 */
 @media screen and (max-width: 600px) {
   #mainimg {
-    aspect-ratio: 9 / 20;
-    height: auto;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
   }
   
   #mainimg .bg-image {

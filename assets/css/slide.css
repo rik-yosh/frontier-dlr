@@ -24,15 +24,25 @@
   z-index: 1;
 }
 
+/* スマホ表示時は背景画像を拡大して両端をカット */
+@media screen and (max-width: 600px) {
+  #mainimg .bg-image {
+    width: 125%;
+    max-width: 125%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
 /* タイトルオーバーレイ */
 #mainimg .title-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 85%;
+  width: 80%;
   height: auto;
-  max-width: 85%;
+  max-width: 80%;
   object-fit: contain;
   z-index: 2;
 }

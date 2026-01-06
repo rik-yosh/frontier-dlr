@@ -209,11 +209,11 @@ header #logo a .logo-img {
 #menubar_hdr {
   display: none;
   position: fixed;
-  top: 15px;
-  right: 20px;
+  top: 10px;
+  right: 15px;
   z-index: 1001;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: rgba(0, 0, 0, 0);
   border: none;
   cursor: pointer;
@@ -221,15 +221,15 @@ header #logo a .logo-img {
 
 #menubar_hdr span {
   display: block;
-  width: 30px;
-  height: 3px;
+  width: 24px;
+  height: 2px;
   background: white;
-  margin: 6px auto;
+  margin: 5px auto;
   transition: 0.3s;
 }
 
 #menubar_hdr.ham span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
+  transform: rotate(45deg) translate(6px, 6px);
 }
 
 #menubar_hdr.ham span:nth-child(2) {
@@ -237,7 +237,7 @@ header #logo a .logo-img {
 }
 
 #menubar_hdr.ham span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* コンテンツの上部マージン（固定ヘッダー用） */
@@ -991,9 +991,9 @@ section h2 .hosoku {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 85%;
+  width: 80%;
   height: auto;
-  max-width: 85%;
+  max-width: 80%;
   object-fit: contain;
   z-index: 2;
   border-radius: 0;

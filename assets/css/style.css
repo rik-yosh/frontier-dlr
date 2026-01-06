@@ -972,12 +972,31 @@ section h2 .hosoku {
   flex: 0 0 35%;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .symposium-image-left img {
   width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+.symposium-image-left .symposium-bg-image {
+  position: relative;
+  z-index: 1;
+}
+
+.symposium-image-left .symposium-title-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: auto;
+  max-width: 85%;
+  object-fit: contain;
+  z-index: 2;
+  border-radius: 0;
 }
 
 .symposium-content-right {

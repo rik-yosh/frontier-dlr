@@ -8,6 +8,7 @@
   align-items: center;
   background: #000;
   overflow: hidden;
+  position: relative;
 }
 
 #mainimg img {
@@ -15,6 +16,25 @@
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* 背景画像 */
+#mainimg .bg-image {
+  position: relative;
+  z-index: 1;
+}
+
+/* タイトルオーバーレイ */
+#mainimg .title-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: auto;
+  max-width: 85%;
+  object-fit: contain;
+  z-index: 2;
 }
 
 /* 以下はスライドショー用の古いスタイル（現在未使用） */

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://rik-yosh.github.io/frontier-dlr/sitemap.xml
+]

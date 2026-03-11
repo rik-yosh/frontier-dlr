@@ -145,8 +145,11 @@ header #logo a {
 }
 
 header #logo a .logo-img {
-  height: 2rem;
+  height: clamp(1.4rem, 1.8vw, 2rem);
+  max-height: 2rem;
   width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
   vertical-align: middle;
 }
 
@@ -935,14 +938,22 @@ section h2 .hosoku {
 .overview-content {
   display: grid;
   gap: 2rem;
-  align-items: start;
-  margin-top: 2rem;
+  align-items: center;
+  margin: 2rem auto 0;
+  max-width: 1100px;
 }
 
 @media screen and (min-width: 900px) {
   .overview-content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+    gap: 2.5rem;
   }
+}
+
+.overview-image {
+  width: 100%;
+  max-width: 620px;
+  justify-self: center;
 }
 
 .overview-image img {
@@ -954,6 +965,13 @@ section h2 .hosoku {
 .overview-text p {
   margin-bottom: 1.5rem;
   line-height: 1.8;
+}
+
+@media screen and (min-width: 900px) {
+  .overview-text {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .overview-text p:last-child {

@@ -44,12 +44,12 @@
   z-index: 1;
 }
 
-/* スマホ表示時は画面の高さ方向を最大で表示 */
+/* スマホでは本文も早く見える高さに抑える */
 @media screen and (max-width: 600px) {
   #mainimg {
     width: 100%;
-    height: 100vh;
-    max-height: 100vh;
+    height: clamp(240px, 48svh, 400px);
+    max-height: none;
   }
   
   #mainimg .bg-image {

@@ -21,7 +21,8 @@ var $menubar = $('#menubar');
 var $menubarHdr = $('#menubar_hdr');
 
 $(window).on("load resize", debounce(function() {
-    if(window.innerWidth < 900) {
+    $menubarHdr.attr('aria-expanded', 'false').attr('aria-label', 'メニューを開く').removeClass('ham');
+    if(window.innerWidth <= 1100) {
         $('body').addClass('small-screen').removeClass('large-screen');
         $menubar.addClass('display-none').removeClass('display-block');
         $menubarHdr.removeClass('display-none ham').addClass('display-block');
@@ -36,6 +37,7 @@ $(window).on("load resize", debounce(function() {
 $(function() {
     $menubarHdr.click(function() {
         $(this).toggleClass('ham');
+        $(this).attr('aria-expanded', $(this).hasClass('ham') ? 'true' : 'false').attr('aria-label', $(this).hasClass('ham') ? 'メニューを閉じる' : 'メニューを開く');
         if ($(this).hasClass('ham')) {
             $menubar.addClass('display-block');
         } else {
@@ -45,7 +47,13 @@ $(function() {
 
     $menubar.find('a[href*="#"]').click(function() {
         $menubar.removeClass('display-block');
-        $menubarHdr.removeClass('ham');
+        $menubarHdr.removeClass('ham').attr('aria-expanded', 'false').attr('aria-label', 'メニューを開く');
+    });
+
+    $(document).on('keydown', function(e) {
+        if (e.key === 'Escape' && $menubarHdr.hasClass('ham')) {
+            $menubarHdr.trigger('click').trigger('focus');
+        }
     });
 
     $menubar.find('a[href=""]').click(function() {

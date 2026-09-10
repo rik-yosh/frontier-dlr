@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>運営体制 - データサイエンスと生命医科学研究のフロンティア</title>  <link rel="icon" type="image/svg+xml" href="assets/images/logo_white.svg">
-  <link rel="alternate icon" type="image/png" href="assets/images/favicon.png">  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="alternate icon" type="image/png" href="favicon-32x32.png">  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/slide.css">
   <link rel="stylesheet" href="assets/css/inview.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -12,16 +12,16 @@
 <body>
   <div id="container">
     <header>
-      <h1 id="logo"><a href="index.html"><img src="assets/images/logo_white.svg" alt="Logo" class="logo-img">FRONTIERS OF DATA SCIENCE AND LIFE SCIENCE RESEARCH</a></h1>
+      <h1 id="logo"><a href="index.html"><img src="assets/images/logo_white.svg" alt="" class="logo-img"><span class="brand-name">データサイエンスと生命医科学研究の<span>フロンティア</span></span></a></h1>
       
       <div id="menubar">
-        <nav>
+        <nav aria-label="サイトメニュー">
           <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="committee.html">COMMITTEE</a></li>
-            <li><a href="Third.html">NEXT</a></li>
-            <li><a href="past.html">PAST</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="Third.html">第3回・開催案内</a></li>
+            <li><a href="past.html">過去の開催</a></li>
+            <li><a href="committee.html" aria-current="page">運営委員会</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
           </ul>
         </nav>
       </div>
@@ -121,11 +121,11 @@
     </div>
 
     <ul id="footermenu">
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="committee.html">COMMITTEE</a></li>
-      <li><a href="Third.html">NEXT</a></li>
-      <li><a href="past.html">PAST</a></li>
-      <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="Third.html">第3回・開催案内</a></li>
+            <li><a href="past.html">過去の開催</a></li>
+            <li><a href="committee.html" aria-current="page">運営委員会</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
     </ul>
 
     <footer>
@@ -136,9 +136,9 @@
     <div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
   </div>
 
-  <div id="menubar_hdr">
+  <button id="menubar_hdr" type="button" aria-label="メニューを開く" aria-controls="menubar" aria-expanded="false">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>

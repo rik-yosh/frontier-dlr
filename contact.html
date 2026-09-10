@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - データサイエンスシンポジウム</title>
+  <title>お問い合わせ - データサイエンスと生命医科学研究のフロンティア</title>
   <link rel="icon" type="image/svg+xml" href="assets/images/logo_white.svg">
-  <link rel="alternate icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="alternate icon" type="image/png" href="favicon-32x32.png">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/slide.css">
   <link rel="stylesheet" href="assets/css/inview.css">
@@ -14,16 +14,16 @@
 <body>
   <div id="container">
     <header>
-      <h1 id="logo"><a href="index.html"><img src="assets/images/logo_white.svg" alt="Logo" class="logo-img">FRONTIERS OF DATA SCIENCE AND LIFE SCIENCE RESEARCH</a></h1>
+      <h1 id="logo"><a href="index.html"><img src="assets/images/logo_white.svg" alt="" class="logo-img"><span class="brand-name">データサイエンスと生命医科学研究の<span>フロンティア</span></span></a></h1>
       
       <div id="menubar">
-        <nav>
+        <nav aria-label="サイトメニュー">
           <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="committee.html">COMMITTEE</a></li>
-            <li><a href="Third.html">NEXT</a></li>
-            <li><a href="past.html">PAST</a></li>
-            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="Third.html">第3回・開催案内</a></li>
+            <li><a href="past.html">過去の開催</a></li>
+            <li><a href="committee.html">運営委員会</a></li>
+            <li><a href="contact.html" aria-current="page">お問い合わせ</a></li>
           </ul>
         </nav>
       </div>
@@ -39,20 +39,20 @@
           <div class="contact-box">
             <h3>主要連絡先</h3>
             <p><strong>吉村 雷輝</strong></p>
-            <p><strong>Email:</strong> yoshimura.raiki21@gmail.com</p>
+            <p><strong>Email:</strong> <a href="mailto:yoshimura.raiki21@gmail.com">yoshimura.raiki21@gmail.com</a></p>
           </div>
 
-          <h3>住所</h3>
+          <h3>事務局所在地</h3>
+          <p>第3回の開催地は東京大学です。会場の詳細は<a href="Third.html#venue">開催案内</a>でお知らせします。</p>
           <p>名古屋大学大学院理学研究科理学専攻・異分野融合生物学研究室（iBLab）<br>
           〒464-8602 名古屋市千種区不老町<br>
           名古屋大学 東山キャンパス 理学部G館5階</p>
         </section>
 
         <section>
-          <h2><span class="fade-in-text">Location Map</span><span class="hosoku">アクセスマップ</span></h2>
-          <div style="max-width: 100%; overflow: hidden;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.26598!2d139.76301!3d35.27334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ccc0f5f5f5f%3A0x9bc4f336c2f4083c!2z55CG5a2m6YOo55So5p2h6YOoIOOCk-OCr-ODh-OCruODiA!5e0!3m2!1sja!2sjp!4v1701000000000" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-          </div>
+          <h2><span class="fade-in-text">Office Access</span><span class="hosoku">事務局へのアクセス</span></h2>
+          <p>事務局は名古屋大学 東山キャンパスにあります。交通案内と地図は研究室の公式ページをご参照ください。</p>
+          <p><a class="event-action" href="https://iblab.bio.nagoya-u.ac.jp/access">事務局へのアクセスを見る</a></p>
         </section>
 
         <section>
@@ -66,11 +66,11 @@
     </div>
 
     <ul id="footermenu">
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="committee.html">COMMITTEE</a></li>
-      <li><a href="Third.html">NEXT</a></li>
-      <li><a href="past.html">PAST</a></li>
-      <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="Third.html">第3回・開催案内</a></li>
+            <li><a href="past.html">過去の開催</a></li>
+            <li><a href="committee.html">運営委員会</a></li>
+            <li><a href="contact.html" aria-current="page">お問い合わせ</a></li>
     </ul>
 
     <footer>
@@ -81,9 +81,9 @@
     <div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
   </div>
 
-  <div id="menubar_hdr">
+  <button id="menubar_hdr" type="button" aria-label="メニューを開く" aria-controls="menubar" aria-expanded="false">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>

@@ -253,7 +253,7 @@ body:not(.home) #contents {
   margin-top: 0;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
   header {
     padding: 15px var(--global-space);
   }
@@ -1117,4 +1117,60 @@ section h2 .hosoku {
   .symposium-image-left.coming-soon-visual {
     width: 100%;
   }
+}
+
+/* 開催案内と共通ナビゲーション */
+html { scroll-padding-top: 90px; }
+header { min-height: 72px; gap: 2rem; }
+header #logo { min-width: 0; flex-shrink: 1; }
+header #logo a { white-space: normal; font-size: 0.85rem; line-height: 1.5; }
+.brand-name span { display: block; font-size: 1.15em; }
+#menubar nav ul { gap: 1.25rem; }
+#menubar nav ul li a { white-space: nowrap; }
+#menubar nav ul li a:hover, #footermenu a:hover { color: #9fe3ed; }
+#menubar a[aria-current="page"] { border-bottom: 2px solid #9fe3ed; }
+a:focus-visible, button:focus-visible { outline: 3px solid #9fe3ed; outline-offset: 5px; }
+#footermenu { flex-wrap: wrap; }
+#mainimg.event-hero { height: auto; min-height: 440px; margin-top: 72px; padding: 3.5rem var(--global-space); justify-content: flex-start; background: #061b25; }
+#mainimg.event-hero > .bg-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
+.event-hero-content { position: relative; z-index: 2; width: 100%; max-width: 1120px; margin: 0 auto; }
+#mainimg .event-hero-content p { padding: 0; margin: 0.7rem 0; font-size: 1rem; }
+#mainimg .event-kicker { font-size: 0.95rem; letter-spacing: 0.08em; }
+.event-kicker span { margin-left: 1rem; color: #b8ecf1; }
+#mainimg #event-title { font-family: inherit; font-size: clamp(1.65rem, 3.3vw, 3rem); font-weight: 700; line-height: 1.55; letter-spacing: 0.02em; margin: 1rem 0; padding: 0; }
+#mainimg .event-dates { font-size: clamp(1.1rem, 2vw, 1.6rem); font-weight: 600; }
+.event-dates time { display: inline-block; }
+#mainimg .event-location { font-size: 1.25rem; }
+.event-location span { display: inline-block; font-size: 0.85rem; margin-left: 0.5rem; }
+.event-action { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; padding: 0.7rem 1.4rem; border-radius: 4px; background: #b8ecf1; color: #082b37; font-weight: 700; text-decoration: none; line-height: 1.5; }
+.event-action:hover { background: #fff; color: #082b37; }
+.event-hero .event-action { margin: 1rem 0 0.25rem; }
+#mainimg .event-status { font-size: 0.85rem; color: #e4eff0; }
+.section-nav { margin: 0 0 2rem; border-bottom: 1px solid #45616b; padding-bottom: 1rem; }
+.section-nav ul { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
+.section-nav a { display: inline-block; padding: 0.5rem 0; text-underline-offset: 0.3em; }
+.overview-text { display: block; }
+.overview-text .overview-lead { font-size: 1.3rem; font-weight: 700; }
+.overview-points dt { color: #b8ecf1; font-weight: 700; margin-top: 1rem; }
+.overview-points dd { line-height: 1.8; }
+.contact-box a { overflow-wrap: anywhere; }
+@media screen and (max-width: 1100px) {
+  header { height: 72px; padding: 10px var(--global-space); padding-right: 70px; }
+  header #logo a { font-size: 0.8rem; }
+  #menubar_hdr { top: 14px; width: 44px; height: 44px; padding: 0; }
+  #menubar.display-block { top: 72px; max-height: calc(100dvh - 72px); overflow-y: auto; }
+  #menubar nav ul li a { padding: 12px 0; }
+}
+@media screen and (max-width: 600px) {
+  html, body { font-size: 15px; }
+  #mainimg.event-hero { min-height: 0; padding: 1.75rem 5vw; }
+  #mainimg .event-kicker { font-size: 0.8rem; }
+  #mainimg #event-title { font-size: clamp(1.3rem, 5.2vw, 1.8rem); }
+  #mainimg .event-dates { font-size: 1rem; }
+  #mainimg .event-status { font-size: 0.8rem; }
+  #mainimg .event-location { font-size: 1.1rem; }
+  #contents { padding-left: 5vw; padding-right: 5vw; }
+  #footermenu { flex-direction: row; gap: 0.5rem 1.5rem; font-size: 0.85rem; }
+  #footermenu a { display: inline-block; padding: 0.5rem 0; }
+  .event-action { width: 100%; }
 }

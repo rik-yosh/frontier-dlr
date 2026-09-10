@@ -26,29 +26,37 @@
 <body class="home">
   <div id="container">
     <header>
-      <h1 id="logo"><a href="index.html"><img src="assets/images/logo_white.svg" alt="Logo" class="logo-img">FRONTIERS OF DATA SCIENCE AND LIFE SCIENCE RESEARCH</a></h1>
+      <h1 id="logo"><a href="index.html"><img src="assets/images/logo_white.svg" alt="" class="logo-img"><span class="brand-name">データサイエンスと生命医科学研究の<span>フロンティア</span></span></a></h1>
       
       <div id="menubar">
-        <nav>
+        <nav aria-label="サイトメニュー">
           <ul>
-            <li><a href="#venue">VENUE</a></li>
-            <li><a href="#program">PROGRAM</a></li>
-            <li><a href="#speakers">SPEAKERS</a></li>
-            <li><a href="#banquet">BANQUET</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="Third.html" aria-current="page">第3回・開催案内</a></li>
+            <li><a href="past.html">過去の開催</a></li>
+            <li><a href="committee.html">運営委員会</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <!-- 第1回の背景画像を仮素材として使用 -->
-    <aside id="mainimg" class="coming-soon-visual" aria-label="第3回シンポジウムの詳細は近日公開">
-      <img src="assets/images/1stDSS_bgimg.jpg" alt="" class="bg-image">
-      <span class="coming-soon-overlay" lang="en">Coming soon...</span>
-    </aside>
+    <section id="mainimg" class="event-hero" aria-labelledby="event-title">
+      <img src="assets/images/1stDSS_bgimg.jpg" alt="" class="bg-image" fetchpriority="high">
+      <div class="event-hero-content">
+        <p class="event-kicker">第3回シンポジウム <span lang="en">Coming soon...</span></p>
+        <h2 id="event-title">データサイエンスと<br>生命医科学研究のフロンティア</h2>
+        <p class="event-dates"><time datetime="2027-03-15">2027年3月15日(月)</time><span> — </span><time datetime="2027-03-16">16日(火)</time></p>
+        <p class="event-location">東京大学 <span>会場詳細は近日公開</span></p>
+        <a class="event-action" href="#program">プログラム・公開状況を見る</a>
+        <p class="event-status">プログラム・講演者・参加登録：<span lang="en">Coming soon...</span></p>
+      </div>
+    </section>
 
     <div id="contents">
       <main>
+        <nav class="section-nav" aria-label="この開催のページ内メニュー"><ul><li><a href="#venue">会場</a></li><li><a href="#program">プログラム</a></li><li><a href="#speakers">講演者</a></li><li><a href="#banquet">意見交換会</a></li><li><a href="#contact">連絡先</a></li></ul></nav>
         <section>
           <h2><span class="fade-in-text">3rd Symposium</span><span class="hosoku">第3回シンポジウム</span></h2>
           <p>2027年3月15日(月) - 3月16日(火)に東京大学にて、第3回データサイエンスと生命医科学研究のフロンティアシンポジウムを開催いたします。</p>
@@ -95,7 +103,7 @@
           <div class="contact-box">
             <h3>主要連絡先</h3>
             <p><strong>吉村 雷輝</strong></p>
-            <p><strong>Email:</strong> yoshimura.raiki21@gmail.com</p>
+            <p><strong>Email:</strong> <a href="mailto:yoshimura.raiki21@gmail.com">yoshimura.raiki21@gmail.com</a></p>
           </div>
           <p class="c" style="margin-top: 2rem;">
             <a href="contact.html" class="btn-link">お問い合わせページへ</a>
@@ -112,11 +120,11 @@
     </div>
 
     <ul id="footermenu">
-      <li><a href="index.html">HOME</a></li>
-      <li><a href="committee.html">COMMITTEE</a></li>
-      <li><a href="Third.html">NEXT</a></li>
-      <li><a href="past.html">PAST SYMPOSIUMS</a></li>
-      <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="index.html">ホーム</a></li>
+            <li><a href="Third.html" aria-current="page">第3回・開催案内</a></li>
+            <li><a href="past.html">過去の開催</a></li>
+            <li><a href="committee.html">運営委員会</a></li>
+            <li><a href="contact.html">お問い合わせ</a></li>
     </ul>
 
     <footer>
@@ -127,9 +135,9 @@
     <div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
   </div>
 
-  <div id="menubar_hdr">
+  <button id="menubar_hdr" type="button" aria-label="メニューを開く" aria-controls="menubar" aria-expanded="false">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>

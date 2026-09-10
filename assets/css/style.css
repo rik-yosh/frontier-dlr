@@ -253,7 +253,7 @@ body:not(.home) #contents {
   margin-top: 0;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1300px) {
   header {
     padding: 15px var(--global-space);
   }
@@ -1154,7 +1154,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #9fe3ed; outline-offs
 .overview-points dt { color: #b8ecf1; font-weight: 700; margin-top: 1rem; }
 .overview-points dd { line-height: 1.8; }
 .contact-box a { overflow-wrap: anywhere; }
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1300px) {
   header { height: 72px; padding: 10px var(--global-space); padding-right: 70px; }
   header #logo a { font-size: 0.8rem; }
   #menubar_hdr { top: 14px; width: 44px; height: 44px; padding: 0; }
@@ -1173,4 +1173,25 @@ a:focus-visible, button:focus-visible { outline: 3px solid #9fe3ed; outline-offs
   #footermenu { flex-direction: row; gap: 0.5rem 1.5rem; font-size: 0.85rem; }
   #footermenu a { display: inline-block; padding: 0.5rem 0; }
   .event-action { width: 100%; }
+}
+
+/* Language selection is available without opening the mobile menu. */
+.language-switch { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; white-space: nowrap; font-size: 0.8rem; }
+.language-switch a { display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 0.3em; }
+.language-switch a[aria-current="true"] { font-weight: 700; text-decoration: none; }
+.language-switch a:hover { color: #9fe3ed; }
+html[lang="en"] header #logo a { max-width: 310px; font-size: 0.8rem; }
+html[lang="en"] .ta1 td, html[lang="en"] .ta1 th { word-break: normal; overflow-wrap: anywhere; hyphens: auto; }
+html[lang="en"] .ta1 td:first-child { overflow-wrap: normal; }
+@media screen and (max-width: 600px) {
+  header { height: 104px; flex-wrap: wrap; gap: 0; align-content: center; }
+  header #logo { flex-basis: 100%; }
+  header .language-switch { min-height: 36px; }
+  .language-switch a { min-height: 36px; }
+  #menubar.display-block { top: 104px; max-height: calc(100dvh - 104px); }
+  #mainimg, #mainimg.event-hero { margin-top: 104px; }
+  body:not(.home) #contents { padding-top: 130px; }
+  html { scroll-padding-top: 120px; }
+  section[id] { scroll-margin-top: 120px; }
+  html[lang="en"] .ta1 { table-layout: auto; }
 }

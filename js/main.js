@@ -19,10 +19,12 @@ function debounce(func, wait) {
 //===============================================================
 var $menubar = $('#menubar');
 var $menubarHdr = $('#menubar_hdr');
+var menuOpenLabel = document.documentElement.lang === 'en' ? 'Open menu' : 'メニューを開く';
+var menuCloseLabel = document.documentElement.lang === 'en' ? 'Close menu' : 'メニューを閉じる';
 
 $(window).on("load resize", debounce(function() {
-    $menubarHdr.attr('aria-expanded', 'false').attr('aria-label', 'メニューを開く').removeClass('ham');
-    if(window.innerWidth <= 1100) {
+    $menubarHdr.attr('aria-expanded', 'false').attr('aria-label', menuOpenLabel).removeClass('ham');
+    if(window.innerWidth <= 1300) {
         $('body').addClass('small-screen').removeClass('large-screen');
         $menubar.addClass('display-none').removeClass('display-block');
         $menubarHdr.removeClass('display-none ham').addClass('display-block');
@@ -37,7 +39,7 @@ $(window).on("load resize", debounce(function() {
 $(function() {
     $menubarHdr.click(function() {
         $(this).toggleClass('ham');
-        $(this).attr('aria-expanded', $(this).hasClass('ham') ? 'true' : 'false').attr('aria-label', $(this).hasClass('ham') ? 'メニューを閉じる' : 'メニューを開く');
+        $(this).attr('aria-expanded', $(this).hasClass('ham') ? 'true' : 'false').attr('aria-label', $(this).hasClass('ham') ? menuCloseLabel : menuOpenLabel);
         if ($(this).hasClass('ham')) {
             $menubar.addClass('display-block');
         } else {
@@ -47,7 +49,7 @@ $(function() {
 
     $menubar.find('a[href*="#"]').click(function() {
         $menubar.removeClass('display-block');
-        $menubarHdr.removeClass('ham').attr('aria-expanded', 'false').attr('aria-label', 'メニューを開く');
+        $menubarHdr.removeClass('ham').attr('aria-expanded', 'false').attr('aria-label', menuOpenLabel);
     });
 
     $(document).on('keydown', function(e) {
